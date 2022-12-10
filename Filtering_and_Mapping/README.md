@@ -124,18 +124,18 @@ Install gffcompare within your conda environment.
 conda activate newrnapipeline
 conda install -c bioconda gffcompare
 ```
-Then create a .txt file ([`list_to_merge.txt`](https://github.com/fscucchia/Pastreoides_development_depth/blob/main/Filtering_and_Mapping/list_to_merge.txt)) listing all of the file names to be merged. This file needs to be in the StringTie directory.
+Then create a .txt file ([`list_to_merge.txt`](https://github.com/fscucchia/Plutea_mangrove_reef/tree/main/Filtering_and_Mapping/list_to_merge.txt)) listing all of the file names to be merged. This file needs to be in the StringTie directory.
 
-Run the script [`Stringtie_merge_compare_count.sh`](https://github.com/fscucchia/Pastreoides_development_depth/blob/main/Filtering_and_Mapping/Stringtie_merge_compare_count.sh), which does the following:
+Run the script [`Stringtie_merge_compare_count.sh`](https://github.com/fscucchia/Plutea_mangrove_reef/tree/main/Filtering_and_Mapping/Stringtie_merge_compare_count.sh), which does the following:
 1) Merges the GTF files generated from the assembly to assess how well the predicted transcripts track to the reference annotation gff file.
 ```
-stringtie --merge -p 8 -G /data/home/mass/fscucchia/databases/Pastreoides_genome_KW/Pastreoides_all_v1.gff -o ../stringtie_merged.gtf list_to_merge.txt
+stringtie --merge -p 8 -G /data/home/databases/Plutea_genome_reefgenomics/plut2v1.1.genes.gff3 -o ../stringtie_merged.gtf list_to_merge.txt
 ```
 2) Uses the program gffcompare to compare the merged GTF files to the reference genome.
 ```
-gffcompare -r /data/home/mass/fscucchia/databases/Pastreoides_genome_KW/Pastreoides_all_v1.gff -o ../compared stringtie_merged.gtf
+gffcompare -r /data/home/databases/Plutea_genome_reefgenomics/plut2v1.1.genes.gff3 -o ../compared stringtie_merged.gtf
 ```
-3) Compiles the GTF files into gene and transcript count matrices. The StringTie program includes the script `prepDE.py` that compiles the assembly-generated files into gene and transcript count matrices. This script requires as input a list of sample names and their file paths which has to be manually created. This .txt file ([`sample_list.txt.`](https://github.com/fscucchia/Pastreoides_development_depth/blob/main/Filtering_and_Mapping/sample_list.txt)) needs to be in the StringIie directory.
+3) Compiles the GTF files into gene and transcript count matrices. The StringTie program includes the script `prepDE.py` that compiles the assembly-generated files into gene and transcript count matrices. This script requires as input a list of sample names and their file paths which has to be manually created. This .txt file ([`sample_list.txt.`](https://github.com/fscucchia/Plutea_mangrove_reef/tree/main/Filtering_and_Mapping/sample_list.txt) needs to be in the StringIie directory.
 ```
 ./prepDE.py -g ../gene_count_matrix.csv -i ./sample_list.txt
 ```
