@@ -1,13 +1,13 @@
 
-**Functional annotation of *Porites lutea* reference genome**
+# Functional annotation of *Porites lutea* reference genome
 
-# Create and activate a conda environment
+#### Create and activate a conda environment
 ```
 conda create -n functional_annotation
 conda activate functional_annotation
 ```
 
-# Install all necessary programs within your conda environment 
+#### Install all necessary programs within your conda environment 
 
 - [DIAMOND](http://www.diamondsearch.org/) Search Program
 ```
@@ -33,7 +33,7 @@ As input, DIAMOND requires your reference sequences (either protein or CDS nucle
 wget http://plut.reefgenomics.org/download/plut2v1.1.proteins.fasta
 ```
 - Run sequence alignment against the nr database
-Run the script [`diamond_nrNCBI_PluteaCDS.sh`](https://github.com/fscucchia/Plutea_mangrove_reef/edit/main/Functional_Annotation/diamond_nrNCBI_PluteaCDS.sh) that contains the following commands: 
+Run the script [`diamond_nrNCBI_PluteaCDS.sh`](https://github.com/fscucchia/Plutea_mangrove_reef/blob/main/Functional_Annotation/diamond_nrNCBI_PluteaCDS.sh) that contains the following commands: 
 ```
 diamond blastp -d /data/home/databases/nr_NCBI/nr.dmnd -q /data/home/databases/Plutea_genome_reefgenomics/plut2v1.1.proteins.fasta -o $O/Plut.diamondBlastpNCBInr_20012022 -f 6 -b 20 --more-sensitive -e 0.00001 -k1       
 #Use -f 6 to get the diamond results in tab format
@@ -41,7 +41,7 @@ diamond blastp -d /data/home/databases/nr_NCBI/nr.dmnd -q /data/home/databases/P
 ```
 #### iii) Run BLASTp Search
 **Blastp: Align _P. lutea_ protein query sequences against a protein reference database (NCBI nr)**
-Run the script [`Blastp_nrNCBI_Plutea.sh`](https://github.com/fscucchia/Plutea_mangrove_reef/edit/main/Functional_Annotation/Blastp_nrNCBI_Plutea.sh) that contains the following commands: 
+Run the script [`Blastp_nrNCBI_Plutea.sh`](https://github.com/fscucchia/Plutea_mangrove_reef/blob/main/Functional_Annotation/Blastp_nrNCBI_Plutea.sh) that contains the following commands: 
 
 - Prepare the nr database for Blastp
 ```
