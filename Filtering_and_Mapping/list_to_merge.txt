@@ -1,0 +1,8 @@
+/data/home/Plutea_mangroves/output_Plutea_host/StringTie/BAM/T_M5_R1.gz.filtered.bam.gtf
+/data/home/Plutea_mangroves/output_Plutea_host/StringTie/BAM/T_M2_R1.gz.filtered.bam.gtf
+/data/home/Plutea_mangroves/output_Plutea_host/StringTie/BAM/T_M4C_R1.gz.filtered.bam.gtf
+/data/home/Plutea_mangroves/output_Plutea_host/StringTie/BAM/T_M7_R1.gz.filtered.bam.gtf
+/data/home/Plutea_mangroves/output_Plutea_host/StringTie/BAM/T_R11B_R1.gz.filtered.bam.gtf
+/data/home/Plutea_mangroves/output_Plutea_host/StringTie/BAM/T_R15B_R1.gz.filtered.bam.gtf
+/data/home/Plutea_mangroves/output_Plutea_host/StringTie/BAM/T_R9D_R1.gz.filtered.bam.gtf
+/data/home/Plutea_mangroves/output_Plutea_host/StringTie/BAM/R16b_R1.gz.filtered.bam.gtf

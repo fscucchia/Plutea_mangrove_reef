@@ -1,0 +1,8 @@
+T_M5	./BAM/T_M5_R1.gz.filtered.bam.gtf
+T_M2	./BAM/T_M2_R1.gz.filtered.bam.gtf
+T_M4C	./BAM/T_M4C_R1.gz.filtered.bam.gtf
+T_M7	./BAM/T_M7_R1.gz.filtered.bam.gtf
+T_R15B	./BAM/T_R15B_R1.gz.filtered.bam.gtf
+T_R9D	./BAM/T_R9D_R1.gz.filtered.bam.gtf
+R16b	./BAM/R16b_R1.gz.filtered.bam.gtf
+T_R11B	./BAM/T_R11B_R1.gz.filtered.bam.gtf
