@@ -39,44 +39,44 @@ tar xzf stringtie-2.1.5.Linux_x86_64.tar.gz
 [Design table](https://github.com/fscucchia/Plutea_mangrove_reef/blob/main/Metadata/design_PE.csv) with samples list.
 
 Run [`fastq-filter-PE_Conda_1_RUN1.sh`](https://github.com/fscucchia/Plutea_mangrove_reef/tree/main/Filtering_and_Mapping/fastq-filter-PE_Conda_1_RUN1.sh) that performs quality filtering. Argument 1 uses FastQC to perform the initial quality check of raw reads. Argument 2 calls for the script [`fastq-filter_Conda_job_1.sh`](https://github.com/fscucchia/Plutea_mangrove_reef/tree/main/Filtering_and_Mapping/fastq-filter_Conda_job_1.sh), which contains all the cutadapt and trimmomatics commands, and removes the adapters using the file [`adapters.fa`](https://github.com/fscucchia/Plutea_mangrove_reef/tree/main/Filtering_and_Mapping/adapters.fa). Argument 3 uses FastQC to perform the quality check of the filtered reads.
-Run [`MultiQC.sh`](https://github.com/fscucchia/Pastreoides_development_depth/blob/main/Filtering_and_Mapping/MultiQC.sh) for multiQC.
+Run [`MultiQC.sh`](https://github.com/fscucchia/Plutea_mangrove_reef/tree/main/Filtering_and_Mapping/MultiQC.sh) for multiQC.
 
-### Alignment of the clean reads to _P. astreoides_ reference genome 
+### Alignment of the clean reads to _P. lutea_ reference genome 
 
 Create a new directory for Hisat.
 ```
 mkdir HISAT
 ```
-Run the script [`StyHISAT2_4.sh`](https://github.com/fscucchia/Pastreoides_development_depth/blob/main/Filtering_and_Mapping/StyHISAT2_4.sh) that does the following:
+Run the script [`StyHISAT2.sh`](https://github.com/fscucchia/Plutea_mangrove_reef/tree/main/Filtering_and_Mapping/StyHISAT2.sh) that does the following:
 1) Symbolically links the filtered fastq files to the HISAT directory.
 ```
-/data/home/mass/fscucchia/Bermuda/output/filtered/*gz.filtered ./
+/data/home/Plutea_mangroves/output_Plutea_host/fastqc_filtered/*gz.filtered ./
 ```
-2) Index the _P. astreoides_ reference genome in the reference directory and performs the alignment using the script [`StyHISAT_withSummary.sh`](https://github.com/fscucchia/Pastreoides_development_depth/blob/main/Filtering_and_Mapping/StyHISAT_withSummary.sh). 
+2) Index the _P. lutea_ reference genome in the reference directory and performs the alignment using the script [`StyHISAT_withSummary.sh`](https://github.com/fscucchia/Plutea_mangrove_reef/tree/main/Filtering_and_Mapping/StyHISAT_withSummary.sh). 
 ```
-hisat2-build -f /data/home/mass/fscucchia/databases/Pastreoides_genome_KW/past_filtered_assembly.fasta ./Past_ref
+hisat2-build -f /data/home/databases/Plutea_genome_reefgenomics/plut_final_2.1.fasta ./Plut_ref
 ```
 ```
 #StyHISAT_withSummary.sh:
 
-   F="/data/home/mass/fscucchia/Bermuda/output/filtered"
+   F="/data/home/Plutea_mangroves/output_Plutea_host/filtered"
    # Aligning paired end reads
    # The R1 in array1 is changed to R3 in the for loop. SAM files are of both forward and reverse reads
-   array1=($(ls $F/*_R1_concat.fastq.gz.filtered))
+   array1=($(ls $F/*_R1.fastq.gz.filtered))
 
    # Bam files are created and sorted, since Stringtie takes sorted file as input
    # The sam file is removed at the end since it is not needed anymore
    # The command --summary-file ${i}.txt reates a summary file per sample, which can be used by multiqc
 
    for i in ${array1[@]}; do
-        hisat2 -p 8 --new-summary --rf --dta -q -x Past_ref -1 ${i} -2 $(echo ${i}|sed s/_R1/_R3/) -S ${i}.sam --summary-file ${i}.txt 
+        hisat2 -p 8 --new-summary --rf --dta -q -x Plut_ref -1 ${i} -2 $(echo ${i}|sed s/_R1/_R3/) -S ${i}.sam --summary-file ${i}.txt 
         samtools sort -@ 8 -o ${i}.bam ${i}.sam
     		echo "${i}_bam"
         rm ${i}.sam
         echo "HISAT2 PE ${i}" $(date)
    done
 ```
-3) Runs multiqc at the end of mapping if the `--summary-file` option was enabled. The [multiqc](https://github.com/fscucchia/Pastreoides_development_depth/blob/main/Filtering_and_Mapping/output/multiqc_report.html) reports the % alignment per each sample.
+3) Runs multiqc at the end of mapping if the `--summary-file` option was enabled. 
 
 <details>
 <summary>Troubleshooting tips!</summary>
