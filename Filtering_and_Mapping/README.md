@@ -87,33 +87,32 @@ So I ran these 3 commands: $ conda config --add channels bioconda
                            $ conda install samtools==1.11
 </details>
 
-- Alignment with Hisat took 7 hours (12 samples PE).
-
 ### Assemble aligned reads and quantify transcripts 
 
 Create a new directory for StringTie. 
 ```
 mkdir StringTie
 ```
-Run the script [`StySTRINGTIE.sh`](https://github.com/fscucchia/Pastreoides_development_depth/blob/main/Filtering_and_Mapping/StySTRINGTIE.sh)(takes 1 hour and 44 minutes for 12 samples PE) that does the following:
+Run the script [`StySTRINGTIE.sh`](https://github.com/fscucchia/Plutea_mangrove_reef/tree/main/Filtering_and_Mapping/StySTRINGTIE.sh)
+that does the following:
 1) Creates a symbolic link to the reference genome gff file inside the stringtie directory
 ```
-ln -s /data/home/mass/fscucchia/databases/Pastreoides_genome_KW/Pastreoides_all_v1.gff.zip ./
+ln -s /data/home/databases/Plutea_genome_reefgenomics/plut2v1.1.genes.gff3 ./
 ```
-2) Runs the script [`StyStringTie_assembly.sh`](https://github.com/fscucchia/Pastreoides_development_depth/blob/main/Filtering_and_Mapping/StyStringTie_assembly.sh) to assemble the aligned reads and quantify transcripts:
+2) Runs the script [`StyStringTie_assembly.sh`](https://github.com/fscucchia/Plutea_mangrove_reef/blob/main/Filtering_and_Mapping/StyStringTie_assembly.sh) to assemble the aligned reads and quantify transcripts:
 ```
   ##!/bin/bash
 
   #Specify working directory
-  W="/data/home/mass/fscucchia/Bermuda/output/filtered"
+  W="/data/home/Plutea_mangroves/output_Plutea_host/filtered"
 
   #StringTie reference-guided assembly
   #These BAM files contain both forward and reverse reads
-  array1=($(ls $W/*_R1_concat.fastq.gz.filtered.bam))
+  array1=($(ls $W/*_R1.gz.filtered.bam))
 
   for i in ${array1[@]}; do
-        stringtie -A gene_abundance/{i}.gene_abund.tab -p 8 --rf -e -G Pastreoides_all_v1.gff.zip -o ${i}.gtf ${i}
-        mv /filtered/${i}.gtf /data/home/mass/fscucchia/Bermuda/output/StringTie/BAM
+        stringtie -A gene_abundance/{i}.gene_abund.tab -p 8 --rf -e -G Pastreoides_all_v1.gff -o ${i}.gtf ${i}
+        mv ${i}.gtf /data/home/Plutea_mangroves/output_Plutea_host/StringTie/BAM
         echo "StringTie-assembly-to-ref ${i}" $(date)
   done
 ```
