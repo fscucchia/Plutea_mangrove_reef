@@ -2,10 +2,10 @@
 #!/bin/sh
 
 # F="/data/home/Plutea_mangroves/output_Plutea_host/filtered"
-# G="/data/home/databases/Pastreoides_genome_Kevin/past_filtered_assembly.fasta"
-#   array1=($(ls $F/*_R1_concat.fastq.gz.filtered.FastqToSam.unmapped.rg.bam))
+# G="/data/home/databases/Plutea_genome_reefgenomics/plut_final_2.1.fasta"
+#   array1=($(ls $F/*_R1.fastq.gz.filtered.FastqToSam.unmapped.rg.bam))
 #   for i in ${array1[@]}; do
-#                 gatk MergeBamAlignment --REFERENCE_SEQUENCE $G --UNMAPPED_BAM ${i}.FastqToSam.unmapped.rg.bam --ALIGNED_BAM ${i}_R1_concat.fastq.gz.filtered.bam --OUTPUT ${i}.MergeBamAlignment.merged.bam --INCLUDE_SECONDARY_ALIGNMENTS false --VALIDATION_STRINGENCY SILENT;
+#                 gatk MergeBamAlignment --REFERENCE_SEQUENCE $G --UNMAPPED_BAM ${i}.FastqToSam.unmapped.rg.bam --ALIGNED_BAM ${i}_R1.fastq.gz.filtered_single.bam --OUTPUT ${i}.MergeBamAlignment.merged.bam --INCLUDE_SECONDARY_ALIGNMENTS false --VALIDATION_STRINGENCY SILENT;
 # 				touch ${i}.MergeBamAlignment.done
 
 #   done
