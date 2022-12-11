@@ -1,4 +1,4 @@
-The following document contains the bioinformatic pipeline used for identifying the coral and endosymbiotic algae species based on _P. lutes_ raw RNA-Seq sequences.
+The following document contains the bioinformatic pipeline used for identifying the coral and endosymbiotic algae species based on _P. lutea_ raw RNA-Seq sequences.
 
 ---
 
