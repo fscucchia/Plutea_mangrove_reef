@@ -56,7 +56,7 @@ diamond makedb --in corals_symbionts_combined_prot.fa -d corals_symbionts_combin
 
 ### Run Diamond blastx
 
-Run [`diamond2_RUN2.sh`](https://github.com/fscucchia/Plutea_mangrove_reef/tree/main/Species_Identification/diamond2_RUN2.sh) that uses the design [`design_diamond.sh`](https://github.com/fscucchia/Plutea_mangrove_reef/tree/main/Metadata/design_diamond.sh) to perform a blastx search by translating the nucleotide sequences and searching the above concatenated protein sequences. 
+Run [`diamond2_RUN2.sh`](https://github.com/fscucchia/Plutea_mangrove_reef/tree/main/Species_Identification/diamond2_RUN2.sh) that uses the design [`design_diamond.sh`](https://github.com/fscucchia/Plutea_mangrove_reef/tree/main/Metadata/diamond_design.sh) to perform a blastx search by translating the nucleotide sequences and searching the above concatenated protein sequences. 
 Here I used an evalue of 0.01 as cutoff.
 
 ### Visualize Diamond output
