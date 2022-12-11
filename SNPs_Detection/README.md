@@ -182,8 +182,8 @@ I also got the error "Error: Multiple instances of '_' in sample ID", so I added
 - Run script [`genotype_plink.sh`](https://github.com/fscucchia/Plutea_mangrove_reef/tree/main/SNPs_Detection/genotype_plink.sh) argument 3, which performs the pruning of SNPs that are strongly genetically linked. 
 - Run script [`genotype_plink.sh`](https://github.com/fscucchia/Plutea_mangrove_reef/tree/main/SNPs_Detection/genotype_plink.sh) argument 4, which extracts the pruned SNPs data from the vcf file. 
 
-### 12- Fst analysis 
-- Run the R script [`Fst_analysis.R`](https://github.com/fscucchia/Plutea_mangrove_reef/tree/main/SNPs_Detection/Fst_analysis.R).
+### 12- Genetic differentiation analysis 
+- Run the R script [`Genetic_differentiation.R`](https://github.com/fscucchia/Plutea_mangrove_reef/tree/main/SNPs_Detection/Genetic_differentiation.R).
 
 
 
