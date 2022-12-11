@@ -1,5 +1,5 @@
 
-## GO enrichment analysis _P. lutea_ adult corals from mangrove and reed sites ######
+## GO enrichment analysis _P. lutea_ adult corals from mangrove and reef sites ######
 
 ```
 #This script is based on the work of Erin Chille (https://github.com/echille/Mcapitata_OA_Developmental_Gene_Expression_Timeseries/tree/main/5-Planula-GO-Enrichment-Analysis) with some modifications and adjustments.
