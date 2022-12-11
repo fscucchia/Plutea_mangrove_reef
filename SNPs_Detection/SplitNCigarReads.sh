@@ -2,7 +2,7 @@
 #!/bin/sh
 
 G="/data/home/Plutea_mangroves/output_Plutea_host/filtered"
-O="/data/home/Plutea_mangroves/output_Plutea_host/SplitNCigarReads/all_rRNA_cleaned"
+O="/data/home/Plutea_mangroves/output_Plutea_host/SplitNCigarReads"
 R="/data/home/databases/Plutea_genome_reefgenomics/plut_final_2.1.fasta"
 
 if [ $1 -eq 1 ]; then
