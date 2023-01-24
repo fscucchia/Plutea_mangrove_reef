@@ -1,4 +1,4 @@
-# Extreme of today may not save corals from the extreme of tomorrow - The role and risks of coral selective adaptation in the face of climate change 
+# Lessons from Extremes - The role and risks of selective adaptation  
 
 This electronic notebook provides the scripts employed to analyze gene expression dynamics of the coral _Porites lutea_ inhabiting mangrove and reef sites 
 in Woody Isles, Australia.
