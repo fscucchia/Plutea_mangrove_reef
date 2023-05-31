@@ -1,4 +1,4 @@
-# Lessons from Extremes - The role and risks of selective adaptation  
+# The role and risks of selective adaptation in extreme coral habitats  
 
 This electronic notebook provides the scripts employed to analyze gene expression dynamics of the coral _Porites lutea_ inhabiting mangrove and reef sites 
 in Woody Isles, Australia.
