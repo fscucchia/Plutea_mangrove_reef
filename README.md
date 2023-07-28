@@ -1,10 +1,9 @@
 # The role and risks of selective adaptation in extreme coral habitats  
 
 This electronic notebook provides the scripts employed to analyze gene expression dynamics of the coral _Porites lutea_ inhabiting mangrove and reef sites 
-in Woody Isles, Australia.
+in Woody Isles, Australia.  [![DOI](https://zenodo.org/badge/568732544.svg)](https://zenodo.org/badge/latestdoi/568732544)
 
-Published in [Nature Communications](https://doi.org/10.1038/s41467-023-39651-7)
-[![DOI](https://zenodo.org/badge/568732544.svg)](https://zenodo.org/badge/latestdoi/568732544)
+Published in [Nature Communications](https://doi.org/10.1038/s41467-023-39651-7).
 
 <p align="center">
 <img src="https://github.com/fscucchia/Plutea_mangrove_reef/blob/main/media/Site_map_reduced.png?raw=true" width="700"/>
