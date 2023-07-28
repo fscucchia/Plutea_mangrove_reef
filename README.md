@@ -2,6 +2,7 @@
 
 This electronic notebook provides the scripts employed to analyze gene expression dynamics of the coral _Porites lutea_ inhabiting mangrove and reef sites 
 in Woody Isles, Australia.
+
 Published in [Nature Communications](https://doi.org/10.1038/s41467-023-39651-7)
 [![DOI](https://zenodo.org/badge/568732544.svg)](https://zenodo.org/badge/latestdoi/568732544)
 
